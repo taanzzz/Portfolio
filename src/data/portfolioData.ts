@@ -7,10 +7,10 @@ export const portfolioData = {
     email: "poroshislamtarek123@gmail.com",
     location: "Bangladesh,Halishahar chittagong",
     image: "https://i.ibb.co/Jj8Md3Lj/20250621-025244.jpg",
-    image2: "https://i.ibb.co/WNgJR0Ry/20250628-021850.jpg",
+    image2: "https://i.ibb.co/xqz06DRJ/my.png",
     resume: "https://drive.google.com/file/d/1yYHTDbzCyl4_tPUXp3eFOisyf11QZGlF/view",
     me: "From a young age,I found myself captivated by two seemingly distant worlds the boundless universe of space and the intricate logic of programming.While the stars continue to inspire awe within me,it was the world of technology where I chose to ground my ambitions.Fueled by a passion for logic and creativity,I’ve always been drawn to the elegance of mathematics with calculus being a personal favorite where abstract problems become intellectual adventures.Beyond the realm of code and equations,I hold a deep curiosity for the cosmos and a love for articulating complex thoughts through writing.For me,learning transcends obligation;it is a lifelong pursuit.With consistency,curiosity and focus,I’m committed to shaping my aspirations into meaningful impact."
-
+    
 
 
   },

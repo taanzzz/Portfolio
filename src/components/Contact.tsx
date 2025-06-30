@@ -50,7 +50,7 @@ const Contact: React.FC = () => {
       await emailjs.send(serviceId, templateId, formData, publicKey);
       setIsSubmitted(true);
       setFormData({ name: '', email: '', subject: '', message: '' });
-      setTimeout(() => setIsSubmitted(false), 4000); 
+      setTimeout(() => setIsSubmitted(false), 4000);
     } catch (error) {
       console.error('Failed to send email:', error);
       alert('Failed to send message. Please try again.');
@@ -59,7 +59,6 @@ const Contact: React.FC = () => {
     }
   };
 
-  
   const containerVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
@@ -80,7 +79,7 @@ const Contact: React.FC = () => {
       scale: 1,
       transition: {
         duration: 0.7,
-        ease: [0.2, 0.6, 0.4, 1], 
+        ease: [0.2, 0.6, 0.4, 1],
       },
     },
   };
@@ -95,11 +94,10 @@ const Contact: React.FC = () => {
     <section
       id="contact"
       ref={ref}
-      className={`relative py-24 sm:py-32 overflow-hidden ${
+      className={`relative py-16 sm:py-24 md:py-32 overflow-hidden ${
         theme === 'dark' ? 'bg-gray-950 text-white' : 'bg-gray-100 text-gray-900'
       }`}
     >
-      
       <div
         className={`absolute inset-0 z-0 transition-opacity duration-500`}
         style={{
@@ -120,16 +118,15 @@ const Contact: React.FC = () => {
       <div className="absolute inset-0 z-0 bg-noise opacity-5" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
-          className="text-center mb-20"
+          className="text-center mb-16 sm:mb-20"
         >
           <motion.p
             variants={itemVariants}
-            className={`text-lg font-semibold uppercase tracking-widest ${
+            className={`text-base sm:text-lg font-semibold uppercase tracking-widest ${
               theme === 'dark' ? 'text-emerald-400' : 'text-purple-600'
             }`}
           >
@@ -137,7 +134,7 @@ const Contact: React.FC = () => {
           </motion.p>
           <motion.h2
             variants={itemVariants}
-            className={`text-5xl sm:text-6xl font-extrabold mb-6 drop-shadow-lg ${
+            className={`text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 sm:mb-6 drop-shadow-lg ${
               theme === 'dark' ? 'text-white' : 'text-gray-900'
             }`}
           >
@@ -145,7 +142,7 @@ const Contact: React.FC = () => {
           </motion.h2>
           <motion.p
             variants={itemVariants}
-            className={`text-xl max-w-3xl mx-auto ${
+            className={`text-base sm:text-xl max-w-3xl mx-auto ${
               theme === 'dark' ? 'text-gray-400' : 'text-gray-700'
             }`}
           >
@@ -153,17 +150,16 @@ const Contact: React.FC = () => {
           </motion.p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-          
+        <div className="grid lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-24 items-start">
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate={isInView ? 'visible' : 'hidden'}
-            className="space-y-12"
+            className="space-y-8 sm:space-y-12"
           >
             <motion.div
               variants={itemVariants}
-              className={`p-10 rounded-3xl border transition-all duration-500
+              className={`p-6 sm:p-10 rounded-3xl border transition-all duration-500
                          ${
                            theme === 'dark'
                              ? 'glass-dark border-gray-700 hover:border-emerald-400/40'
@@ -172,14 +168,14 @@ const Contact: React.FC = () => {
                          shadow-xl backdrop-blur-lg`}
             >
               <h3
-                className={`text-3xl font-bold mb-8 ${
+                className={`text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 ${
                   theme === 'dark' ? 'text-white' : 'text-gray-900'
                 }`}
               >
                 Let's Start a Conversation
               </h3>
               <p
-                className={`text-lg leading-relaxed mb-10 ${
+                className={`text-base sm:text-lg leading-relaxed mb-8 sm:mb-10 ${
                   theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
                 }`}
               >
@@ -188,25 +184,23 @@ const Contact: React.FC = () => {
                 I'd love to hear from you.
               </p>
 
-              
-              <div className="space-y-8">
-                <div className="flex items-start space-x-5">
+              <div className="space-y-6 sm:space-y-8">
+                <div className="flex items-start space-x-4 sm:space-x-5">
                   <motion.div
                     initial={{ scale: 0.8 }}
                     animate={{ scale: 1 }}
                     transition={{ type: 'spring', stiffness: 200, damping: 12, delay: 0.4 }}
-                    className={`p-4 rounded-xl shrink-0
-                               ${
-                                 theme === 'dark'
-                                   ? 'bg-gray-800 text-cyan-400'
-                                   : 'bg-blue-100 text-blue-600'
-                               }`}
+                    className={`p-3 sm:p-4 rounded-xl shrink-0 ${
+                      theme === 'dark'
+                        ? 'bg-gray-800 text-cyan-400'
+                        : 'bg-blue-100 text-blue-600'
+                    }`}
                   >
-                    <Mail size={28} />
+                    <Mail size={24}  />
                   </motion.div>
                   <div>
                     <h4
-                      className={`font-semibold text-lg ${
+                      className={`font-semibold text-base sm:text-lg ${
                         theme === 'dark' ? 'text-white' : 'text-gray-900'
                       }`}
                     >
@@ -214,43 +208,42 @@ const Contact: React.FC = () => {
                     </h4>
                     <a
                       href={`mailto:${portfolioData.personal.email}`}
-                      className={`text-md ${
+                      className={`text-sm sm:text-md ${
                         theme === 'dark'
                           ? 'text-gray-400 hover:text-cyan-400'
                           : 'text-gray-600 hover:text-blue-600'
-                      } transition-colors`}
+                      } transition-colors break-words`}
                     >
                       {portfolioData.personal.email}
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-5">
+                <div className="flex items-start space-x-4 sm:space-x-5">
                   <motion.div
                     initial={{ scale: 0.8 }}
                     animate={{ scale: 1 }}
                     transition={{ type: 'spring', stiffness: 200, damping: 12, delay: 0.5 }}
-                    className={`p-4 rounded-xl shrink-0
-                               ${
-                                 theme === 'dark'
-                                   ? 'bg-gray-800 text-emerald-400'
-                                   : 'bg-green-100 text-green-600'
-                               }`}
+                    className={`p-3 sm:p-4 rounded-xl shrink-0 ${
+                      theme === 'dark'
+                        ? 'bg-gray-800 text-emerald-400'
+                        : 'bg-green-100 text-green-600'
+                    }`}
                   >
-                    <MapPin size={28} />
+                    <MapPin size={24}  />
                   </motion.div>
                   <div>
                     <h4
-                      className={`font-semibold text-lg ${
+                      className={`font-semibold text-base sm:text-lg ${
                         theme === 'dark' ? 'text-white' : 'text-gray-900'
                       }`}
                     >
                       Location
                     </h4>
                     <p
-                      className={`text-md ${
+                      className={`text-sm sm:text-md ${
                         theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
-                      }`}
+                      } break-words`}
                     >
                       {portfolioData.personal.location}
                     </p>
@@ -258,16 +251,15 @@ const Contact: React.FC = () => {
                 </div>
               </div>
 
-              
-              <motion.div variants={itemVariants} className="mt-12">
+              <motion.div variants={itemVariants} className="mt-8 sm:mt-12">
                 <h4
-                  className={`font-semibold text-lg mb-6 ${
+                  className={`font-semibold text-base sm:text-lg mb-4 sm:mb-6 ${
                     theme === 'dark' ? 'text-white' : 'text-gray-900'
                   }`}
                 >
                   Find me on:
                 </h4>
-                <div className="flex space-x-6">
+                <div className="flex flex-wrap gap-4 sm:space-x-6">
                   {[
                     { icon: Github, url: portfolioData.social.github, name: 'GitHub' },
                     { icon: Linkedin, url: portfolioData.social.linkedin, name: 'LinkedIn' },
@@ -282,15 +274,15 @@ const Contact: React.FC = () => {
                       initial="hidden"
                       animate={isInView ? 'visible' : 'hidden'}
                       whileHover="hover"
-                      custom={index} 
-                      className={`p-4 rounded-full transition-all duration-300 transform-gpu
+                      custom={index}
+                      className={`p-3 sm:p-4 rounded-full transition-all duration-300 transform-gpu
                                  ${
                                    theme === 'dark'
                                      ? 'bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-cyan-400'
                                      : 'bg-gray-200 text-gray-600 hover:bg-gray-300 hover:text-blue-600'
                                  } shadow-md hover:shadow-lg`}
                     >
-                      <social.icon size={24} />
+                      <social.icon size={20} />
                     </motion.a>
                   ))}
                 </div>
@@ -298,7 +290,6 @@ const Contact: React.FC = () => {
             </motion.div>
           </motion.div>
 
-          
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -306,7 +297,7 @@ const Contact: React.FC = () => {
           >
             <motion.div
               variants={itemVariants}
-              className={`relative p-8 sm:p-12 rounded-3xl transition-all duration-500
+              className={`relative p-6 sm:p-12 rounded-3xl transition-all duration-500
                          ${
                            theme === 'dark'
                              ? 'glass-dark border border-gray-700'
@@ -314,7 +305,6 @@ const Contact: React.FC = () => {
                          }
                          shadow-2xl`}
             >
-              
               <AnimatePresence>
                 {isSubmitting && (
                   <motion.div
@@ -322,10 +312,10 @@ const Contact: React.FC = () => {
                     initial={{ opacity: 0, y: -20, scale: 0.9 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: -20, scale: 0.9 }}
-                    className="absolute top-6 right-6 z-20"
+                    className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20"
                   >
                     <div
-                      className={`flex items-center space-x-2 px-5 py-3 rounded-xl border
+                      className={`flex items-center space-x-2 px-4 py-2 sm:px-5 sm:py-3 rounded-xl border
                                  ${
                                    theme === 'dark'
                                      ? 'bg-blue-900/50 text-blue-300 border-blue-700'
@@ -333,8 +323,8 @@ const Contact: React.FC = () => {
                                  }
                                  backdrop-blur-sm`}
                     >
-                      <Loader2 className="animate-spin" size={20} />
-                      <span className="font-semibold">Sending...</span>
+                      <Loader2 className="animate-spin h-4 w-4 sm:h-5 sm:w-5" />
+                      <span className="font-semibold text-sm sm:text-base">Sending...</span>
                     </div>
                   </motion.div>
                 )}
@@ -344,10 +334,10 @@ const Contact: React.FC = () => {
                     initial={{ opacity: 0, y: -20, scale: 0.9 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: -20, scale: 0.9 }}
-                    className="absolute top-6 right-6 z-20"
+                    className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20"
                   >
                     <div
-                      className={`flex items-center space-x-2 px-5 py-3 rounded-xl border
+                      className={`flex items-center space-x-2 px-4 py-2 sm:px-5 sm:py-3 rounded-xl border
                                  ${
                                    theme === 'dark'
                                      ? 'bg-emerald-900/50 text-emerald-400 border-emerald-700'
@@ -355,19 +345,19 @@ const Contact: React.FC = () => {
                                  }
                                  backdrop-blur-sm`}
                     >
-                      <CheckCircle size={20} />
-                      <span className="font-semibold">Message sent!</span>
+                      <CheckCircle size={20} className="h-4 w-4 sm:h-5 sm:w-5" />
+                      <span className="font-semibold text-sm sm:text-base">Message sent!</span>
                     </div>
                   </motion.div>
                 )}
               </AnimatePresence>
 
-              <form onSubmit={handleSubmit} className="space-y-8">
-                <div className="grid md:grid-cols-2 gap-8">
+              <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
+                <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
                   <motion.div variants={itemVariants}>
                     <label
                       htmlFor="name"
-                      className={`block text-sm font-medium mb-3 ${
+                      className={`block text-sm sm:text-base font-medium mb-2 sm:mb-3 ${
                         theme === 'dark' ? 'text-gray-200' : 'text-gray-700'
                       }`}
                     >
@@ -380,20 +370,20 @@ const Contact: React.FC = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className={`w-full px-5 py-4 rounded-xl transition-all duration-300 focus:ring-4 focus:outline-none focus:shadow-lg
+                      className={`w-full px-4 py-3 sm:px-5 sm:py-4 rounded-xl transition-all duration-300 focus:ring-4 focus:outline-none focus:shadow-lg
                                  ${
                                    theme === 'dark'
                                      ? 'bg-gray-800/70 border border-gray-600 text-white placeholder-gray-500 focus:ring-cyan-500/20 focus:border-cyan-400'
                                      : 'bg-white/70 border border-gray-300 text-gray-900 placeholder-gray-500 focus:ring-blue-500/20 focus:border-blue-500'
                                  }
-                                 backdrop-blur-md`}
+                                 backdrop-blur-md text-sm sm:text-base`}
                       placeholder="e.g. Jane Doe"
                     />
                   </motion.div>
                   <motion.div variants={itemVariants}>
                     <label
                       htmlFor="email"
-                      className={`block text-sm font-medium mb-3 ${
+                      className={`block text-sm sm:text-base font-medium mb-2 sm:mb-3 ${
                         theme === 'dark' ? 'text-gray-200' : 'text-gray-700'
                       }`}
                     >
@@ -406,13 +396,13 @@ const Contact: React.FC = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className={`w-full px-5 py-4 rounded-xl transition-all duration-300 focus:ring-4 focus:outline-none focus:shadow-lg
+                      className={`w-full px-4 py-3 sm:px-5 sm:py-4 rounded-xl transition-all duration-300 focus:ring-4 focus:outline-none focus:shadow-lg
                                  ${
                                    theme === 'dark'
                                      ? 'bg-gray-800/70 border border-gray-600 text-white placeholder-gray-500 focus:ring-cyan-500/20 focus:border-cyan-400'
                                      : 'bg-white/70 border border-gray-300 text-gray-900 placeholder-gray-500 focus:ring-blue-500/20 focus:border-blue-500'
                                  }
-                                 backdrop-blur-md`}
+                                 backdrop-blur-md text-sm sm:text-base`}
                       placeholder="e.g. hello@example.com"
                     />
                   </motion.div>
@@ -421,7 +411,7 @@ const Contact: React.FC = () => {
                 <motion.div variants={itemVariants}>
                   <label
                     htmlFor="subject"
-                    className={`block text-sm font-medium mb-3 ${
+                    className={`block text-sm sm:text-base font-medium mb-2 sm:mb-3 ${
                       theme === 'dark' ? 'text-gray-200' : 'text-gray-700'
                     }`}
                   >
@@ -434,13 +424,13 @@ const Contact: React.FC = () => {
                     value={formData.subject}
                     onChange={handleInputChange}
                     required
-                    className={`w-full px-5 py-4 rounded-xl transition-all duration-300 focus:ring-4 focus:outline-none focus:shadow-lg
+                    className={`w-full px-4 py-3 sm:px-5 sm:py-4 rounded-xl transition-all duration-300 focus:ring-4 focus:outline-none focus:shadow-lg
                                ${
                                  theme === 'dark'
                                    ? 'bg-gray-800/70 border border-gray-600 text-white placeholder-gray-500 focus:ring-cyan-500/20 focus:border-cyan-400'
                                    : 'bg-white/70 border border-gray-300 text-gray-900 placeholder-gray-500 focus:ring-blue-500/20 focus:border-blue-500'
                                }
-                               backdrop-blur-md`}
+                               backdrop-blur-md text-sm sm:text-base`}
                     placeholder="Let's talk about..."
                   />
                 </motion.div>
@@ -448,7 +438,7 @@ const Contact: React.FC = () => {
                 <motion.div variants={itemVariants}>
                   <label
                     htmlFor="message"
-                    className={`block text-sm font-medium mb-3 ${
+                    className={`block text-sm sm:text-base font-medium mb-2 sm:mb-3 ${
                       theme === 'dark' ? 'text-gray-200' : 'text-gray-700'
                     }`}
                   >
@@ -459,15 +449,15 @@ const Contact: React.FC = () => {
                     name="message"
                     value={formData.message}
                     onChange={handleInputChange}
-                    rows={7}
+                    rows={6}
                     required
-                    className={`w-full px-5 py-4 rounded-xl transition-all duration-300 focus:ring-4 focus:outline-none resize-none focus:shadow-lg
+                    className={`w-full px-4 py-3 sm:px-5 sm:py-4 rounded-xl transition-all duration-300 focus:ring-4 focus:outline-none resize-none focus:shadow-lg
                                ${
                                  theme === 'dark'
                                    ? 'bg-gray-800/70 border border-gray-600 text-white placeholder-gray-500 focus:ring-cyan-500/20 focus:border-cyan-400'
                                    : 'bg-white/70 border border-gray-300 text-gray-900 placeholder-gray-500 focus:ring-blue-500/20 focus:border-blue-500'
                                }
-                               backdrop-blur-md`}
+                               backdrop-blur-md text-sm sm:text-base`}
                     placeholder="Tell me about your project or just say hello..."
                   />
                 </motion.div>
@@ -475,15 +465,15 @@ const Contact: React.FC = () => {
                 <motion.button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`w-full flex items-center justify-center px-10 py-5 rounded-xl font-bold text-lg tracking-wide transform-gpu transition-all duration-300 ease-out
-                             ${
-                               isSubmitting
-                                 ? 'opacity-70 cursor-wait'
-                                 : theme === 'dark'
-                                 ? 'bg-gradient-to-r from-cyan-400 to-emerald-400 text-gray-950 hover:shadow-cyan-400/30'
-                                 : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:shadow-blue-500/30'
-                             }
-                             ${!isSubmitting ? 'hover:scale-[1.01] active:scale-[0.99] hover:shadow-2xl' : ''}`}
+                  className={`w-full flex items-center justify-center px-6 py-3 sm:px-10 sm:py-5 rounded-xl font-bold text-base sm:text-lg tracking-wide transform-gpu transition-all duration-300 ease-out
+                               ${
+                                 isSubmitting
+                                   ? 'opacity-70 cursor-wait'
+                                   : theme === 'dark'
+                                   ? 'bg-gradient-to-r from-cyan-400 to-emerald-400 text-gray-950 hover:shadow-cyan-400/30'
+                                   : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:shadow-blue-500/30'
+                               }
+                               ${!isSubmitting ? 'hover:scale-[1.01] active:scale-[0.99] hover:shadow-2xl' : ''}`}
                 >
                   <AnimatePresence mode="wait">
                     {isSubmitting ? (
@@ -494,7 +484,7 @@ const Contact: React.FC = () => {
                         exit={{ opacity: 0, scale: 0.8 }}
                         className="flex items-center"
                       >
-                        <Loader2 className="mr-3 h-5 w-5 animate-spin" />
+                        <Loader2 className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5" />
                         Sending...
                       </motion.span>
                     ) : (
@@ -505,7 +495,7 @@ const Contact: React.FC = () => {
                         exit={{ opacity: 0, scale: 0.8 }}
                         className="flex items-center"
                       >
-                        <Send className="mr-3 h-5 w-5" />
+                        <Send className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5" />
                         Send Message
                       </motion.span>
                     )}
