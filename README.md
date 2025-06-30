@@ -1,6 +1,9 @@
 # 🌐 Portfolio Preview
 
-![Portfolio Preview](https://i.ibb.co/4gJng6cW/all-devices-black.png)
+<div align="center">
+  <img src="https://i.ibb.co/4gJng6cW/all-devices-black.png" alt="Portfolio Responsive Preview" width="800" />
+</div>
+
 
 
 # 🌟 Professional Portfolio
