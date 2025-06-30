@@ -55,10 +55,23 @@ export const portfolioData = {
   tech: ["React", "Firebase", "eXPRESS.JS", "MongoDB", "Tailwind CSS", "Framer Motion"],
   category: "React",
   image: "https://i.ibb.co/k6wfqrn7/Screenshot-2025-06-24-164822.png", 
-  github: "https://github.com/porosh/plant-care-tracker",
+  github: "https://github.com/taanzzz/my-plantcare-project",
   live: "https://my-login-auth-67067.web.app/",
   featured: true
+},
+{
+  id: 3,
+  title: "PayBill Platform",
+  description: "A secure and responsive bill payment web application with user authentication, real-time balance updates, payment history tracking, and Firebase-integrated billing features with dynamic routing and context-based access control.",
+  tech: ["React", "Firebase", "Express.js", "MongoDB", "Tailwind CSS", "Framer Motion"],
+  category: "React",
+  image: "https://i.ibb.co/hxwKNG89/Screenshot-2025-06-25-182720.png", 
+  github: "https://github.com/taanzzz/my-paybill-project",
+  live: "https://talented-song.surge.sh/",
+  featured: true
 }
+
+
   ],
 
   experience: [
